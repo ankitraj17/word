@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>word reader</title>
+    <style>
+        body{
+            background-color: rgb(2, 105, 105);
+        }
+    
+        .h1{
+            text-align: center;
+            background-color: crimson;
+            padding:1px;
+            margin:0px 150px;
+             }
+
+
+        #container{
+            text-align: center;
+        }    
+       
+        
+        p{
+            font-size: 50px;
+            font-weight: bold;
+            background-color: darkgreen;
+            padding:1px;
+            margin:auto;
+        }
+
+    </style>
+</head>
+<body><div class="h1">
+    <h1  >Word and Character Counter</h1>
+</div>
+  
+    <div id="container">
+        <textarea name="" id="m1" cols="90" rows="10"></textarea>
+    <div id="count">
+    <p><span id="n1">0</span> words and
+       <span id="n2">0</span> character
+    </p>
+    </div>
+    </div>
+<script> 
+      let text1=document.getElementById("m1");
+      text1.addEventListener('input',function(){
+          let text =this.value;
+          let char=text.length;
+          document.getElementById("n2").innerHTML=char;
+          text=text.trim();
+          let num=text.split(" ");
+          let cleanlist=num.filter(function(elm){
+              return elm !="";
+          })
+
+          document.getElementById("n1").innerHTML=cleanlist.length;
+      });
+
+
+</script>
+    
+</body>
+</html>
